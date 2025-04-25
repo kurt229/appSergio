@@ -296,30 +296,6 @@ main {
     color: #777; /* Lighter color for the subtitle */
 }
 
-/* Floating Logo Styles */
-.floating-logo {
-    position: fixed; /* Keep it in a fixed position */
-    bottom: 20px; /* Distance from the bottom */
-    right: 20px; /* Distance from the right */
-    z-index: 100; /* Ensure it's above other content */
-    opacity: 0; /* Start hidden */
-    visibility: hidden; /* Hide from screen readers when not visible */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Smooth transition */
-}
-
-.floating-logo.visible {
-    opacity: 1; /* Make visible when the 'visible' class is added */
-    visibility: visible; /* Make visible */
-}
-
-.floating-logo img {
-    height: 50px; /* Adjust the size of the floating logo */
-    width: auto; /* Maintain aspect ratio */
-    /* Optional: Add a small shadow or border */
-    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
-    /* border-radius: 50%; */
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .navbar {
@@ -334,16 +310,6 @@ main {
 
     .navbar-right {
          gap: 15px;
-         /* Allow space between the grid icon and the language button */
-         flex-grow: 1; /* Allow navbar-right to take up available space */
-         justify-content: flex-end; /* Push items towards the right */
-         align-items: center; /* Ensure items are vertically centered */
-    }
-
-    /* Shift the language button further to the right */
-    .navbar-right .language-dropdown {
-        margin-left: auto; /* Push the language dropdown to the right */
-        margin-right: 0; /* Ensure no right margin pushes it left */
     }
 
     .grid-icon svg {
@@ -367,17 +333,16 @@ main {
 
     /* Adjust language dropdown position on mobile */
      .language-menu {
-        /* Since language dropdown is pushed right, align menu to its right edge */
-        right: 0;
-        left: auto; /* Override the left: 50% from generic .dropdown-menu */
-        transform: none; /* Override the transform: translateX(-50%) */
+        right: auto; /* Remove right alignment */
+        left: 50%; /* Center relative to the container */
+        transform: translateX(-50%); /* Center relative to its own width */
      }
 
     /* Adjust the arrow position for language menu on mobile */
      .language-menu::before {
-        left: auto; /* Override the left: 50% from generic .dropdown-menu */
-        right: 10px; /* Position arrow from the right edge of the menu */
-        transform: none; /* Override the transform: translateX(-50%) */
+        left: 50%; /* Center relative to the menu */
+        right: auto; /* Remove right alignment */
+        transform: translateX(-50%); /* Center relative to its own width */
      }
 
     .hero-content {
@@ -431,14 +396,5 @@ main {
 
     main {
         padding: 15px;
-    }
-
-    /* Adjust floating logo size/position on mobile */
-    .floating-logo {
-        bottom: 15px;
-        right: 15px;
-    }
-    .floating-logo img {
-        height: 40px; /* Smaller size on mobile */
     }
 }
