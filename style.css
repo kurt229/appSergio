@@ -200,12 +200,6 @@ body {
     z-index: 1;
     max-width: 800px; /* Limit width of the text content */
     padding: 20px;
-    /* Removed background-color for backdrop-filter to work effectively */
-    border-radius: 8px;
-    /* Add backdrop-filter for a "mirror" or glass effect */
-    backdrop-filter: blur(8px) brightness(80%); /* Adjust blur and brightness as needed */
-    -webkit-backdrop-filter: blur(8px) brightness(80%); /* For Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
 }
 
 .hero-content h1 {
