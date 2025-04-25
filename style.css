@@ -1,0 +1,406 @@
+body {
+    margin: 0;
+    font-family: sans-serif; /* Using a standard font, adjust if specific font needed */
+    background-color: #f4f4f4; /* Changed body background to light gray based on image */
+    color: #333; /* Default text color for main content */
+}
+
+.navbar {
+    background-color: transparent; /* Make navbar background transparent */
+    padding: 18px 20px; /* Increased vertical padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white; /* Default text color for navbar elements */
+    position: fixed; /* Use fixed positioning to stay at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Ensure navbar is above the video */
+    transition: background-color 0.3s ease-in-out; /* Add transition for smooth color change */
+}
+
+.navbar.scrolled {
+    background-color: #6ac15a; /* Green color from the button */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 40px; /* Adjust height as needed */
+    margin-right: 15px; /* Space between logo and potential future elements */
+    /* Removed filter as green background makes it less necessary */
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between grid icon and button */
+}
+
+.dropdown-container {
+    position: relative; /* Needed for absolute positioning of the menu */
+    display: inline-block; /* Ensure it wraps tightly around the grid icon */
+    cursor: pointer; /* Indicate it's interactive */
+}
+
+.grid-icon svg {
+    width: 39px; /* Increased size */
+    height: 39px; /* Increased size */
+    /* The stroke color is currentColor (white by default in navbar), 
+       fill is none by default. Specific rect fill handled in HTML. */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Position below the grid icon */
+    left: 50%; /* Position the left edge at the horizontal center of the container */
+    transform: translateX(-50%); /* Shift left by half its own width to truly center */
+    background-color: white;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow like in the image */
+    padding: 10px 0; /* Vertical padding */
+    min-width: 200px; /* Minimum width for the menu */
+    z-index: 20; /* Ensure it's above other content */
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack items vertically */
+    gap: 5px; /* Space between menu items */
+    margin-top: 20px; /* Increased margin-top to make space for the arrow */
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0; /* Use opacity for smooth transition */
+    visibility: hidden; /* Hide from screen readers when not visible */
+}
+
+/* Add the pointy shape (arrow) */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    bottom: 100%; /* Position above the menu */
+    left: 50%; /* Position the left edge at the horizontal center of the menu */
+    transform: translateX(-50%); /* Shift left by half its own width (0) to truly center */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Half the base of the triangle */
+    border-right: 10px solid transparent; /* Other half of the base */
+    border-bottom: 10px solid white; /* The point of the triangle pointing up */
+}
+
+.dropdown-container:hover .dropdown-menu {
+    display: flex; /* Use flex to enable gap */
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-item {
+    padding: 8px 20px; /* Padding around text */
+    text-decoration: none;
+    color: #333; /* Default text color */
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+.dropdown-item-blue {
+    color: #007bff; /* Blue color */
+}
+
+.dropdown-item-red {
+    color: #dc3545; /* Red color */
+}
+
+.dropdown-button-blue {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 5px 20px; /* Add horizontal margin to align with items */
+    width: calc(100% - 40px); /* Make button width fill the menu width minus padding/margin */
+    text-align: center; /* Center text in button */
+}
+
+.dropdown-button-blue:hover {
+     background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* New Language Dropdown Styles */
+.language-dropdown {
+    position: relative; /* Needed for absolute positioning of the menu */
+    display: inline-block; /* Ensure it wraps tightly around the button */
+}
+
+.language-button {
+    background-color: #6ac15a; /* Light green color from the image */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1.1rem; /* Increased font size */
+    /* Add hover/active effects if needed */
+}
+
+.language-menu {
+    /* Inherits most styles from .dropdown-menu */
+    /* Adjust positioning slightly if needed, relative to the button */
+    right: 0; /* Align right edge of menu with right edge of button */
+    left: auto; /* Override the left: 50% from generic .dropdown-menu */
+    transform: none; /* Override the transform: translateX(-50%) */
+}
+
+/* Adjust the arrow position for the language menu */
+.language-menu::before {
+     left: auto; /* Override the left: 50% from generic .dropdown-menu */
+     right: 10px; /* Position arrow from the right edge of the menu */
+     transform: none; /* Override the transform: translateX(-50%) */
+}
+
+.language-dropdown:hover .language-menu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative; /* Needed for absolute positioning of video and content */
+    width: 100%;
+    height: 100vh; /* Make it full viewport height */
+    overflow: hidden; /* Hide overflowing parts of the video */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center;
+    color: white; /* Default text color for hero content */
+    /* Removed padding-top as navbar is fixed */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire container */
+    z-index: -1; /* Place the video behind the content */
+    filter: brightness(0.6); /* Darken the video slightly for better text readability */
+}
+
+.hero-content {
+    position: relative; /* Keep content above the video */
+    z-index: 1;
+    max-width: 800px; /* Limit width of the text content */
+    padding: 20px;
+    /* Removed background-color for backdrop-filter to work effectively */
+    border-radius: 8px;
+    /* Add backdrop-filter for a "mirror" or glass effect */
+    backdrop-filter: blur(8px) brightness(80%); /* Adjust blur and brightness as needed */
+    -webkit-backdrop-filter: blur(8px) brightness(80%); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+}
+
+.hero-content h1 {
+    font-size: 2.5em; /* Adjust size as needed */
+    margin-bottom: 20px;
+    color: white; /* Title is white */
+}
+
+.hero-content p {
+    font-size: 1.1em; /* Adjust size as needed */
+    line-height: 1.6;
+    color: #cccccc; /* Paragraph text color is slightly lighter */
+    margin-bottom: 30px; /* Add space below paragraph before the button */
+}
+
+.hero-link-button {
+    display: inline-block; /* Make it behave like a block for padding/margin */
+    background-color: #6ac15a; /* Green color from the language button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.hero-link-button:hover {
+    background-color: #5aa64e; /* Slightly darker green on hover */
+}
+
+/* Main Content Styles */
+main {
+    position: relative;
+    z-index: 1; /* Ensure main content is above the video background */
+    margin-top: 0; /* Remove margin-top as background color extends */
+    padding: 20px; /* Add some padding for content */
+    background-color: #f4f4f4; /* Light gray background for the main section */
+    color: #333; /* Dark text for main content */
+}
+
+/* Stats Section Styles */
+.stats-section {
+    max-width: 800px; /* Limit the width of the stats container */
+    margin: 40px auto; /* Center the container and add vertical space */
+    padding: 20px;
+    display: flex; /* Use flexbox to potentially arrange items */
+    flex-direction: column; /* Stack items vertically by default */
+    gap: 30px; /* Space between stat items */
+}
+
+.stat-item {
+    display: flex; /* Arrange icon and details horizontally */
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Space between icon and text details */
+}
+
+.stat-icon {
+    width: 60px; /* Set a fixed width for the icon container */
+    height: 60px; /* Set a fixed height for the icon container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4169e1; /* A blue color for the icon, similar to the image */
+}
+
+.stat-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.stat-details {
+    display: flex;
+    flex-direction: column; /* Stack number, label, and subtitle vertically */
+}
+
+.stat-number {
+    font-size: 2em; /* Large size for the number */
+    font-weight: bold;
+    margin-bottom: 5px; /* Space below the number */
+    color: #333; /* Darker color for the number */
+}
+
+.stat-label {
+    font-size: 1.2em; /* Size for the main label */
+    font-weight: normal;
+    margin-bottom: 3px; /* Space below the label */
+    color: #555; /* Slightly lighter color for the label */
+}
+
+.stat-subtitle {
+    font-size: 0.9em; /* Smaller size for the subtitle */
+    color: #777; /* Lighter color for the subtitle */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 30px 15px; /* Slightly decreased vertical padding */
+        /* Adjust horizontal distribution for better centering on mobile */
+        justify-content: space-evenly; /* Distribute space evenly around items */
+    }
+
+    .navbar-logo {
+        height: 38px;
+    }
+
+    .navbar-right {
+         gap: 15px;
+    }
+
+    .grid-icon svg {
+        width: 39px; /* Increased size */
+        height: 39px; /* Increased size */
+    }
+
+    .language-button {
+        padding: 10px 18px;
+        font-size: 1rem;
+    }
+
+     /* Adjust dropdown position on mobile if needed */
+    .dropdown-menu {
+        right: auto; /* Remove right alignment */
+        left: 50%; /* Center relative to the container */
+        transform: translateX(-50%); /* Center relative to its own width */
+        /* You might adjust width or min-width for smaller screens */
+        min-width: 180px;
+    }
+
+    /* Adjust language dropdown position on mobile */
+     .language-menu {
+        right: auto; /* Remove right alignment */
+        left: 50%; /* Center relative to the container */
+        transform: translateX(-50%); /* Center relative to its own width */
+     }
+
+    /* Adjust the arrow position for language menu on mobile */
+     .language-menu::before {
+        left: 50%; /* Center relative to the menu */
+        right: auto; /* Remove right alignment */
+        transform: translateX(-50%); /* Center relative to its own width */
+     }
+
+    .hero-content {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .hero-link-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .stats-section {
+        margin: 30px auto;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .stat-item {
+         gap: 15px;
+         align-items: flex-start;
+    }
+
+    .stat-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .stat-number {
+        font-size: 1.8em;
+    }
+
+    .stat-label {
+        font-size: 1.1em;
+    }
+
+    .stat-subtitle {
+        font-size: 0.9em;
+    }
+
+    main {
+        padding: 15px;
+    }
+}

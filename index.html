@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiningOracles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="about-animate.7af56208.png" alt="MiningOracles Logo" class="navbar-logo">
+            <!-- The image asset contains the logo icon and text "MININGORACLES" -->
+        </div>
+        <div class="navbar-right">
+            <div class="dropdown-container">
+                <div class="grid-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7" fill="white"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                </div>
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">Page d'accueil</a>
+                    <a href="#" class="dropdown-item">Exploration minière</a>
+                </div>
+            </div>
+            <!-- New Language Dropdown -->
+            <div class="dropdown-container language-dropdown">
+                <button class="language-button">Language</button>
+                <!-- Language Dropdown Menu -->
+                <div class="dropdown-menu language-menu">
+                    <a href="#" class="dropdown-item">English</a>
+                    <a href="#" class="dropdown-item">Italian</a>
+                    <a href="#" class="dropdown-item">Français</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Let's go to the future together</h1>
+            <p>
+                Active investors, future-focused institutions and trusted asset stewards. We believe that we can bring economic prosperity in a sustainable manner while protecting the living environment of future generations. We are committed to our vision of a "Active Economy, Beautiful Society and Clean Planet" (abc world) which is part of the 2030 Sustainable Development Goals set by the United Nations.
+            </p>
+            <a href="#" class="hero-link-button">Participer à l'exploration minière</a>
+        </div>
+        <!-- Add your video source(s) here -->
+        <video autoplay loop muted playsinline class="video-background">
+            <!-- Example sources - replace with your video files -->
+            <source src="back.webm" type="video/mp4">
+            <!-- <source src="your-video.webm" type="video/webm"> -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Optional: Add content below the navbar -->
+    <main>
+        <section class="stats-section">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.1"></circle>
+                        <path d="M8 6H16M8 10H16M8 14H12M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+                <div class="stat-details">
+                    <div class="stat-number">195K+</div>
+                    <div class="stat-label">Order completed</div>
+                    <div class="stat-subtitle">Safe and High Yield</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                 <div class="stat-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.1"></circle>
+                        <path d="M8 6H16M8 10H16M8 14H12M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+                <div class="stat-details">
+                    <div class="stat-number">31K+</div>
+                    <div class="stat-label">Clients served</div>
+                    <div class="stat-subtitle">Professional customer service team</div>
+                </div>
+            </div>
+             <!-- Add more stat items if needed -->
+             <!--
+             <div class="stat-item">
+                 <div class="stat-icon"> ... svg ... </div>
+                 <div class="stat-details">
+                    <div class="stat-number">...</div>
+                    <div class="stat-label">...</div>
+                    <div class="stat-subtitle">...</div>
+                 </div>
+             </div>
+             -->
+        </section>
+    </main>
+
+    <script>
+        // Get the navbar element
+        const navbar = document.querySelector('.navbar');
+
+        // Add a scroll event listener
+        window.addEventListener('scroll', () => {
+            // Check the vertical scroll position
+            if (window.scrollY > 50) { // Change 50 to the desired scroll threshold
+                // Add the 'scrolled' class if scrolled down
+                navbar.classList.add('scrolled');
+            } else {
+                // Remove the 'scrolled' class if at the top
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
