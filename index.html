@@ -1,18 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiningOracles</title>
+    <title>fortunaMine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="navbar-left">
-            <img src="logo.png" alt="MiningOracles Logo" class="navbar-logo">
-            <!-- The image asset contains the logo icon and text "MININGORACLES" -->
-        </div>
-        <div class="navbar-right">
+        <img src="logo.png" alt="Logo" class="navbar-logo">
+        <div class="navbar-secondary-items"> 
             <div class="dropdown-container">
                 <div class="grid-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -22,20 +20,18 @@
                         <rect x="3" y="14" width="7" height="7"></rect>
                     </svg>
                 </div>
-                <!-- Dropdown Menu -->
                 <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Page d'accueil</a>
-                    <a href="#" class="dropdown-item">Exploration minière</a>
+                    <a href="#" class="dropdown-item" data-translate-key="nav-home">Page d'accueil</a>
+                    <a href="#" class="dropdown-item" data-translate-key="nav-mining">Exploration minière</a>
                 </div>
             </div>
-            <!-- New Language Dropdown -->
             <div class="dropdown-container language-dropdown">
-                <button class="language-button">Language</button>
-                <!-- Language Dropdown Menu -->
+                <button class="language-button" data-translate-key="nav-language">Language</button>
                 <div class="dropdown-menu language-menu">
-                    <a href="#" class="dropdown-item">English</a>
-                    <a href="#" class="dropdown-item">Italian</a>
-                    <a href="#" class="dropdown-item">Français</a>
+                    <a href="#" class="dropdown-item language-option" data-lang="en">English</a>
+                    <a href="#" class="dropdown-item language-option" data-lang="it">Italiano</a>
+                    <a href="#" class="dropdown-item language-option" data-lang="fr">Français</a>
+                    <a href="#" class="dropdown-item language-option" data-lang="es">Español</a>
                 </div>
             </div>
         </div>
@@ -43,22 +39,18 @@
 
     <div class="hero-section">
         <div class="hero-content">
-            <h1>Let's go to the future together</h1>
-            <p>
+            <h1 data-translate-key="hero-title">Let's go to the future together</h1>
+            <p data-translate-key="hero-paragraph">
                 Active investors, future-focused institutions and trusted asset stewards. We believe that we can bring economic prosperity in a sustainable manner while protecting the living environment of future generations. We are committed to our vision of a "Active Economy, Beautiful Society and Clean Planet" (abc world) which is part of the 2030 Sustainable Development Goals set by the United Nations.
             </p>
-            <a href="#" class="hero-link-button">Participer à l'exploration minière</a>
+            <a href="#" class="hero-link-button" data-translate-key="hero-button">Participer à l'exploration minière</a>
         </div>
-        <!-- Add your video source(s) here -->
         <video autoplay loop muted playsinline class="video-background">
-            <!-- Example sources - replace with your video files -->
             <source src="back.webm" type="video/webm">
-            <!-- <source src="your-video.webm" type="video/webm"> -->
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <!-- Optional: Add content below the navbar -->
     <main>
         <section class="stats-section">
             <div class="stat-item">
@@ -70,12 +62,12 @@
                 </div>
                 <div class="stat-details">
                     <div class="stat-number">195K+</div>
-                    <div class="stat-label">Order completed</div>
-                    <div class="stat-subtitle">Safe and High Yield</div>
+                    <div class="stat-label" data-translate-key="stat1-label">Order completed</div>
+                    <div class="stat-subtitle" data-translate-key="stat1-subtitle">Safe and High Yield</div>
                 </div>
             </div>
             <div class="stat-item">
-                 <div class="stat-icon">
+                <div class="stat-icon">
                     <svg viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.1"></circle>
                         <path d="M8 6H16M8 10H16M8 14H12M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -83,39 +75,151 @@
                 </div>
                 <div class="stat-details">
                     <div class="stat-number">31K+</div>
-                    <div class="stat-label">Clients served</div>
-                    <div class="stat-subtitle">Professional customer service team</div>
+                    <div class="stat-label" data-translate-key="stat2-label">Clients served</div>
+                    <div class="stat-subtitle" data-translate-key="stat2-subtitle">Professional customer service team</div>
                 </div>
             </div>
-             <!-- Add more stat items if needed -->
-             <!--
-             <div class="stat-item">
-                 <div class="stat-icon"> ... svg ... </div>
-                 <div class="stat-details">
-                    <div class="stat-number">...</div>
-                    <div class="stat-label">...</div>
-                    <div class="stat-subtitle">...</div>
-                 </div>
-             </div>
-             -->
         </section>
     </main>
 
-    <script>
-        // Get the navbar element
-        const navbar = document.querySelector('.navbar');
+    <img src="logo2.png" alt="MiningOracles Logo" class="floating-logo">
 
-        // Add a scroll event listener
-        window.addEventListener('scroll', () => {
-            // Check the vertical scroll position
-            if (window.scrollY > 50) { // Change 50 to the desired scroll threshold
-                // Add the 'scrolled' class if scrolled down
-                navbar.classList.add('scrolled');
-            } else {
-                // Remove the 'scrolled' class if at the top
-                navbar.classList.remove('scrolled');
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const floatingLogo = document.querySelector('.floating-logo');
+        const scrollThreshold = 50;
+
+        const dropdownContainers = document.querySelectorAll('.dropdown-container');
+        const gridDropdownContainer = document.querySelector('.dropdown-container:not(.language-dropdown)');
+        const languageDropdownContainer = document.querySelector('.language-dropdown');
+        const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+
+        const translations = {
+            'en': {
+                'nav-home': 'Home Page',
+                'nav-mining': 'Mining Exploration',
+                'nav-language': 'Language',
+                'hero-title': "Let's go to the future together",
+                'hero-paragraph': "Active investors, future-focused institutions and trusted asset stewards. We believe that we can bring economic prosperity in a sustainable manner while protecting the living environment of future generations. We are committed to our vision of a \"Active Economy, Beautiful Society and Clean Planet\" (abc world) which is part of the 2030 Sustainable Development Goals set by the United Nations.",
+                'hero-button': "Participate in Mining Exploration",
+                'stat1-label': 'Order completed',
+                'stat1-subtitle': 'Safe and High Yield',
+                'stat2-label': 'Clients served',
+                'stat2-subtitle': 'Professional customer service team'
+            },
+            'it': {
+                'nav-home': 'Pagina iniziale',
+                'nav-mining': 'Esplorazione mineraria',
+                'nav-language': 'Lingua',
+                'hero-title': "Andiamo insieme verso il futuro",
+                'hero-paragraph': "Investitori attivi, istituzioni orientate al futuro e gestori patrimoniali di fiducia. Crediamo di poter portare prosperità economica in modo sostenibile, proteggendo l'ambiente di vita delle generazioni future. Ci impegniamo per la nostra visione di una \"Economia Attiva, Società Bella e Pianeta Pulito\" (mondo abc) che fa parte degli Obiettivi di Sviluppo Sostenibile 2030 stabiliti dalle Nazioni Unite.",
+                'hero-button': "Partecipa all'Esplorazione Mineraria",
+                'stat1-label': 'Ordini completati',
+                'stat1-subtitle': 'Sicuro e ad alto rendimento',
+                'stat2-label': 'Clienti serviti',
+                'stat2-subtitle': 'Team di assistenza clienti professionale'
+            },
+            'fr': {
+                'nav-home': 'Page d\'accueil',
+                'nav-mining': 'Exploration minière',
+                'nav-language': 'Langue',
+                'hero-title': "Allons vers le futur ensemble",
+                'hero-paragraph': "Investisseurs actifs, institutions tournées vers l'avenir et gestionnaires d'actifs de confiance. Nous pensons que nous pouvons apporter la prospérité économique de manière durable tout en protégeant l'environnement de vie des générations futures. Nous sommes engagés envers notre vision d'une « Économie Active, une Belle Société et une Planète Propre » (monde abc), qui fait partie des Objectifs de Développement Durable 2030 fixés par les Nations Unies.",
+                'hero-button': "Participer à l'exploration minière",
+                'stat1-label': 'Commandes complétées',
+                'stat1-subtitle': 'Sécurité et haut rendement',
+                'stat2-label': 'Clients servis',
+                'stat2-subtitle': 'Équipe de service client professionnelle'
+            },
+            'es': {
+                'nav-home': 'Página de inicio',
+                'nav-mining': 'Exploración minera',
+                'nav-language': 'Idioma',
+                'hero-title': "Vayamos juntos al futuro",
+                'hero-paragraph': "Inversores activos, instituciones con visión de futuro y custodios de activos de confianza. Creemos que podemos lograr prosperidad económica de manera sostenible, protegiendo el entorno de vida de las generaciones futuras. Estamos comprometidos con nuestra visión de una \"Economía Activa, una Sociedad Bella y un Planeta Limpio\" (mundo abc), que forma parte de los Objetivos de Desarrollo Sostenible 2030 establecidos por las Naciones Unidas.",
+                'hero-button': "Participar en la Exploración Minera",
+                'stat1-label': 'Pedidos completados',
+                'stat1-subtitle': 'Seguro y de alto rendimiento',
+                'stat2-label': 'Clientes atendidos',
+                'stat2-subtitle': 'Equipo de atención al cliente profesional'
+            }
+        };
+
+        function setLanguage(langCode) {
+            localStorage.setItem('selectedLanguage', langCode);
+
+            const elementsToTranslate = document.querySelectorAll('[data-translate-key]');
+
+            elementsToTranslate.forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[langCode] && translations[langCode][key]) {
+                    if (element.tagName === 'BUTTON' || element.tagName === 'A' || element.tagName === 'H1' || element.tagName === 'P' || element.classList.contains('stat-label') || element.classList.contains('stat-subtitle')) {
+                        element.innerText = translations[langCode][key];
+                    }
+                }
+            });
+
+            document.documentElement.lang = langCode;
+        }
+
+        function closeAllDropdowns() {
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                container.classList.remove('active');
+            });
+        }
+
+        dropdownContainers.forEach(container => {
+            container.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const isActive = container.classList.contains('active');
+                closeAllDropdowns();
+                if (!isActive) {
+                    container.classList.add('active');
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            let isClickInsideDropdown = false;
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                if (container.contains(event.target)) {
+                    isClickInsideDropdown = true;
+                }
+            });
+
+            if (!isClickInsideDropdown) {
+                closeAllDropdowns();
             }
         });
+
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                const selectedLang = option.getAttribute('data-lang');
+                setLanguage(selectedLang);
+                closeAllDropdowns();
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                navbar.classList.add('scrolled');
+                floatingLogo.classList.add('show');
+            } else {
+                navbar.classList.remove('scrolled');
+                floatingLogo.classList.remove('show');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            const defaultLanguage = 'en';
+            const supportedLanguages = Object.keys(translations);
+            const initialLanguage = supportedLanguages.includes(savedLanguage) ? savedLanguage : defaultLanguage;
+            setLanguage(initialLanguage);
+        });
+
     </script>
 
 </body>
