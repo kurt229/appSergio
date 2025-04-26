@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f7fbfe; 
     color: #333;
 }
 
@@ -9,7 +9,7 @@ body {
     background-color: transparent;
     padding: 18px 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center; 
     align-items: center;
     color: white;
     position: fixed;
@@ -25,7 +25,7 @@ body {
 .navbar-secondary-items {
     display: flex;
     align-items: center;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .navbar.scrolled {
@@ -34,6 +34,7 @@ body {
 
 .navbar-logo {
     height: 40px;
+    margin-right: 20px; 
 }
 
 .dropdown-container {
@@ -48,6 +49,7 @@ body {
 .grid-icon svg {
     width: 39px;
     height: 39px;
+    stroke: currentColor; 
 }
 
 .dropdown-menu {
@@ -218,17 +220,29 @@ main {
     z-index: 1;
     margin-top: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #f7fbfe; 
     color: #333;
+}
+
+.scroll-animated {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animated.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .stats-section {
     max-width: 800px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
+    background-color: #f7fbfe; 
 }
 
 .stat-item {
@@ -244,11 +258,18 @@ main {
     justify-content: center;
     align-items: center;
     color: #4169e1;
+    background-color: rgba(65, 105, 225, 0.1);
+    border-radius: 50%;
 }
 
 .stat-icon svg {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
+    stroke: #4169e1;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .stat-details {
@@ -275,11 +296,88 @@ main {
     color: #777;
 }
 
+.service-section {
+    max-width: 1200px; 
+    margin: 40px auto;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f7fbfe; 
+}
+
+.service-subtitle {
+    font-size: 1em;
+    color: #6ac15a; 
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.service-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.service-cards-container {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    width: 300px; 
+    text-align: left;
+    display: flex; 
+    flex-direction: column; 
+    position: relative; 
+}
+
+.service-image {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    display: block;
+}
+
+.service-card-content {
+    padding: 20px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.service-card-text {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.service-card-heading {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+.service-card-logo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 40px; 
+    height: auto;
+}
+
 .floating-logo {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
+    width: 90px; 
     height: auto;
     z-index: 5;
     opacity: 0;
@@ -293,22 +391,30 @@ main {
     visibility: visible;
 }
 
+@media (max-width: 1200px) {
+    .service-cards-container {
+        gap: 20px; 
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 30px 15px;
-        justify-content: center; 
-        gap: 15px; 
+        justify-content: center;
+        gap: 15px;
     }
 
     .navbar-logo {
         height: 38px;
+        margin-right: auto; 
+        margin-left: 0;
     }
 
     .navbar-secondary-items {
-        display: flex; 
+        display: flex;
         align-items: center;
-        gap: 15px; 
-        margin-left: 20px; 
+        gap: 15px;
+        margin-left: 0;
     }
 
     .grid-icon svg {
@@ -351,8 +457,8 @@ main {
 
     .stats-section {
         margin: 30px auto;
-        padding: 15px;
-        gap: 20px;
+        padding: 30px 15px;
+        gap: 30px;
     }
 
     .stat-item {
@@ -363,6 +469,11 @@ main {
     .stat-icon {
         width: 55px;
         height: 55px;
+    }
+
+    .stat-icon svg {
+        width: 60%;
+        height: 60%;
     }
 
     .stat-number {
@@ -382,7 +493,7 @@ main {
     }
 
     .floating-logo {
-        width: 50px;
+        width: 70px; 
         bottom: 20px;
         right: 20px;
     }

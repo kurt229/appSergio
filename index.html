@@ -10,7 +10,7 @@
 
     <nav class="navbar">
         <img src="logo.png" alt="Logo" class="navbar-logo">
-        <div class="navbar-secondary-items"> 
+        <div class="navbar-secondary-items">
             <div class="dropdown-container">
                 <div class="grid-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -53,11 +53,10 @@
 
     <main>
         <section class="stats-section">
-            <div class="stat-item">
+            <div class="stat-item scroll-animated">
                 <div class="stat-icon">
                     <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.1"></circle>
-                        <path d="M8 6H16M8 10H16M8 14H12M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
                     </svg>
                 </div>
                 <div class="stat-details">
@@ -66,11 +65,10 @@
                     <div class="stat-subtitle" data-translate-key="stat1-subtitle">Safe and High Yield</div>
                 </div>
             </div>
-            <div class="stat-item">
+            <div class="stat-item scroll-animated">
                 <div class="stat-icon">
                     <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.1"></circle>
-                        <path d="M8 6H16M8 10H16M8 14H12M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
                     </svg>
                 </div>
                 <div class="stat-details">
@@ -79,148 +77,52 @@
                     <div class="stat-subtitle" data-translate-key="stat2-subtitle">Professional customer service team</div>
                 </div>
             </div>
+            <div class="stat-item scroll-animated">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24">
+                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <div class="stat-details">
+                    <div class="stat-number">2340K+</div>
+                    <div class="stat-label" data-translate-key="stat3-label">Profit created</div>
+                    <div class="stat-subtitle" data-translate-key="stat3-subtitle">Cash out your assets anytime</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section">
+            <p class="service-subtitle scroll-animated" data-translate-key="service-subtitle">Our service</p>
+            <h2 class="service-title scroll-animated" data-translate-key="service-title">Go to the future together</h2>
+            <div class="service-cards-container">
+                <div class="service-card scroll-animated">
+                    <img src="img1.a6b3f553.jpg" alt="Cryptocurrency mining facility" class="service-image">
+                    <div class="service-card-content">
+                        <p class="service-card-text" data-translate-key="service-card-start">Start mining</p>
+                        <h3 class="service-card-heading" data-translate-key="service-card-mining">Cryptocurrency mining</h3>
+                    </div>
+                </div>
+                <div class="service-card scroll-animated">
+                    <img src="img2.ca1750d3.jpg" alt="Stock investment chart" class="service-image">
+                    <div class="service-card-content">
+                        <p class="service-card-text" data-translate-key="service-card-stock-start">Stock investment</p>
+                        <h3 class="service-card-heading" data-translate-key="service-card-stock-title">Stocks and Futures</h3>
+                    </div>
+                </div>
+                <div class="service-card scroll-animated">
+                    <img src="img3.b044c14d.jpg" alt="Keyboard with shopping cart" class="service-image">
+                    <div class="service-card-content">
+                        <p class="service-card-text" data-translate-key="service-card-online-start">Online Shopping</p>
+                        <h3 class="service-card-heading" data-translate-key="service-card-online-title">Pay with cryptocurrency</h3>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <img src="logo2.png" alt="MiningOracles Logo" class="floating-logo">
 
-    <script>
-        const navbar = document.querySelector('.navbar');
-        const floatingLogo = document.querySelector('.floating-logo');
-        const scrollThreshold = 50;
-
-        const dropdownContainers = document.querySelectorAll('.dropdown-container');
-        const gridDropdownContainer = document.querySelector('.dropdown-container:not(.language-dropdown)');
-        const languageDropdownContainer = document.querySelector('.language-dropdown');
-        const dropdownMenus = document.querySelectorAll('.dropdown-menu');
-
-        const translations = {
-            'en': {
-                'nav-home': 'Home Page',
-                'nav-mining': 'Mining Exploration',
-                'nav-language': 'Language',
-                'hero-title': "Let's go to the future together",
-                'hero-paragraph': "Active investors, future-focused institutions and trusted asset stewards. We believe that we can bring economic prosperity in a sustainable manner while protecting the living environment of future generations. We are committed to our vision of a \"Active Economy, Beautiful Society and Clean Planet\" (abc world) which is part of the 2030 Sustainable Development Goals set by the United Nations.",
-                'hero-button': "Participate in Mining Exploration",
-                'stat1-label': 'Order completed',
-                'stat1-subtitle': 'Safe and High Yield',
-                'stat2-label': 'Clients served',
-                'stat2-subtitle': 'Professional customer service team'
-            },
-            'it': {
-                'nav-home': 'Pagina iniziale',
-                'nav-mining': 'Esplorazione mineraria',
-                'nav-language': 'Lingua',
-                'hero-title': "Andiamo insieme verso il futuro",
-                'hero-paragraph': "Investitori attivi, istituzioni orientate al futuro e gestori patrimoniali di fiducia. Crediamo di poter portare prosperità economica in modo sostenibile, proteggendo l'ambiente di vita delle generazioni future. Ci impegniamo per la nostra visione di una \"Economia Attiva, Società Bella e Pianeta Pulito\" (mondo abc) che fa parte degli Obiettivi di Sviluppo Sostenibile 2030 stabiliti dalle Nazioni Unite.",
-                'hero-button': "Partecipa all'Esplorazione Mineraria",
-                'stat1-label': 'Ordini completati',
-                'stat1-subtitle': 'Sicuro e ad alto rendimento',
-                'stat2-label': 'Clienti serviti',
-                'stat2-subtitle': 'Team di assistenza clienti professionale'
-            },
-            'fr': {
-                'nav-home': 'Page d\'accueil',
-                'nav-mining': 'Exploration minière',
-                'nav-language': 'Langue',
-                'hero-title': "Allons vers le futur ensemble",
-                'hero-paragraph': "Investisseurs actifs, institutions tournées vers l'avenir et gestionnaires d'actifs de confiance. Nous pensons que nous pouvons apporter la prospérité économique de manière durable tout en protégeant l'environnement de vie des générations futures. Nous sommes engagés envers notre vision d'une « Économie Active, une Belle Société et une Planète Propre » (monde abc), qui fait partie des Objectifs de Développement Durable 2030 fixés par les Nations Unies.",
-                'hero-button': "Participer à l'exploration minière",
-                'stat1-label': 'Commandes complétées',
-                'stat1-subtitle': 'Sécurité et haut rendement',
-                'stat2-label': 'Clients servis',
-                'stat2-subtitle': 'Équipe de service client professionnelle'
-            },
-            'es': {
-                'nav-home': 'Página de inicio',
-                'nav-mining': 'Exploración minera',
-                'nav-language': 'Idioma',
-                'hero-title': "Vayamos juntos al futuro",
-                'hero-paragraph': "Inversores activos, instituciones con visión de futuro y custodios de activos de confianza. Creemos que podemos lograr prosperidad económica de manera sostenible, protegiendo el entorno de vida de las generaciones futuras. Estamos comprometidos con nuestra visión de una \"Economía Activa, una Sociedad Bella y un Planeta Limpio\" (mundo abc), que forma parte de los Objetivos de Desarrollo Sostenible 2030 establecidos por las Naciones Unidas.",
-                'hero-button': "Participar en la Exploración Minera",
-                'stat1-label': 'Pedidos completados',
-                'stat1-subtitle': 'Seguro y de alto rendimiento',
-                'stat2-label': 'Clientes atendidos',
-                'stat2-subtitle': 'Equipo de atención al cliente profesional'
-            }
-        };
-
-        function setLanguage(langCode) {
-            localStorage.setItem('selectedLanguage', langCode);
-
-            const elementsToTranslate = document.querySelectorAll('[data-translate-key]');
-
-            elementsToTranslate.forEach(element => {
-                const key = element.getAttribute('data-translate-key');
-                if (translations[langCode] && translations[langCode][key]) {
-                    if (element.tagName === 'BUTTON' || element.tagName === 'A' || element.tagName === 'H1' || element.tagName === 'P' || element.classList.contains('stat-label') || element.classList.contains('stat-subtitle')) {
-                        element.innerText = translations[langCode][key];
-                    }
-                }
-            });
-
-            document.documentElement.lang = langCode;
-        }
-
-        function closeAllDropdowns() {
-            document.querySelectorAll('.dropdown-container').forEach(container => {
-                container.classList.remove('active');
-            });
-        }
-
-        dropdownContainers.forEach(container => {
-            container.addEventListener('click', (event) => {
-                event.stopPropagation();
-                const isActive = container.classList.contains('active');
-                closeAllDropdowns();
-                if (!isActive) {
-                    container.classList.add('active');
-                }
-            });
-        });
-
-        document.addEventListener('click', (event) => {
-            let isClickInsideDropdown = false;
-            document.querySelectorAll('.dropdown-container').forEach(container => {
-                if (container.contains(event.target)) {
-                    isClickInsideDropdown = true;
-                }
-            });
-
-            if (!isClickInsideDropdown) {
-                closeAllDropdowns();
-            }
-        });
-
-        document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                const selectedLang = option.getAttribute('data-lang');
-                setLanguage(selectedLang);
-                closeAllDropdowns();
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > scrollThreshold) {
-                navbar.classList.add('scrolled');
-                floatingLogo.classList.add('show');
-            } else {
-                navbar.classList.remove('scrolled');
-                floatingLogo.classList.remove('show');
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLanguage = localStorage.getItem('selectedLanguage');
-            const defaultLanguage = 'en';
-            const supportedLanguages = Object.keys(translations);
-            const initialLanguage = supportedLanguages.includes(savedLanguage) ? savedLanguage : defaultLanguage;
-            setLanguage(initialLanguage);
-        });
-
-    </script>
+    <script type="module" src="script.js"></script>
 
 </body>
 </html>
